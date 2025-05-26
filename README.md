@@ -1,1 +1,1 @@
-# js-practices
+just practicing JS stuffs
