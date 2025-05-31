@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission - Practice</title>
+</head>
+<body>
+
+    <form id="myForm" onsubmit="validateForm()">
+        <label for="name">Name: </label>
+        <input type="text" id="name"><br><br>
+
+        <label for="email">Email: </label>
+        <input type="email" id="email"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+
+        function validateForm() {
+            event.preventDefault; // to prevent default submission
+
+            // Retrieve the values
+            const userName = document.getElementById('name').value;
+            const userEmail = document.getElementById('email').value;
+
+            // For validation if all input fields have contents.
+            if (userName === '' || userEmail === '') {
+                alert("Please fill in all the fields.");
+                return false; // to prevent form submission if validation fails
+            }
+            alert ('Form submitted successfully');
+        }
+        
+    </script>    
+</body>
+</html>
