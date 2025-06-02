@@ -1,9 +1,9 @@
-const breakfastMenu = ['Pancakes', 'Eggs Benedict', 'Oatmeal', 'Frittata'];
-const mainCourseMenu = ['Steak', 'Pasta', 'Burger', 'Salmon'];
-const dessertMenu = ['Cake', 'Ice Cream', 'Pudding', 'Fruit Salad'];
+const breakfastMenu = ['Pancakes - $12', 'Eggs Benedict - $22.99', 'Oatmeal - $21.99', 'Frittata - $15'];
+const mainCourseMenu = ['Steak - $50', 'Pasta - $28', 'Burger - $25', 'Salmon - $55'];
+const dessertMenu = ['Cake - $10', 'Ice Cream - $4', 'Pudding - $6', 'Fruit Salad - $12'];
 
 // Using map method to iterate through the breakfast menu
-const breakfastMenuHTML = breakfastMenu.map((item, index) => `<p>Item ${index + 1}: ${item}</p>`).join('');
+const breakfastMenuHTML = breakfastMenu.map((item) => `<p>${item}</p>`).join('');
 document.getElementById('breakfastMenuItems').innerHTML = breakfastMenuHTML;
 
 // Using forEach method to traverse mainCourseMenu
