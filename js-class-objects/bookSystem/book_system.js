@@ -23,7 +23,6 @@ function addBook() {
 }
 
 // to show book details in the management system.
-
 function showBooks() {
     // map function to iterate through the books array
     const booksDiv = books.map((book, index) => `<h1>Book Number: ${index + 1}</h1>
@@ -31,7 +30,8 @@ function showBooks() {
         <p><strong>Author Name: </strong>${book.authorName}</p>
         <p><strong>Book Description: </strong>${book.bookDescription}</p>
         <p><strong>No. of Pages: </strong>${book.pagesNumber} page(s)</p>
-        <button onclick="editBook(${index})">Edit</button>` // to call the editbook() function, passing the index of the book as a parameter.
+        <button onclick="editBook(${index})">Edit</button>
+        <button onclick="deleteBook(${index})">Delete</button> `
     );
     document.getElementById('books').innerHTML = booksDiv.join(''); // to concatenate all the HTML elements generated for each book into a single thing.
 }
@@ -45,6 +45,11 @@ function editBook(index) {
 
     books.splice(index, 1); // Remove old entry to prevent duplicate entries
     showBooks(); // Refresh list
+}
+
+function deleteBook(index) {
+    books.splice(index, 1);
+    showBooks();
 }
 
 // clears the book details by assigning empty value to element using ID's.
