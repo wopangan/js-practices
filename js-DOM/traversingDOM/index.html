@@ -1,114 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Styling DOM elements</title>
 
     <style>
-        body{
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-        }
-        div {
-            padding: 10px 10px;
-            margin: 10px 100px 10px;
-            background-color: lightblue;
-        }
+      body {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        padding: 10px 10px;
+        margin: 10px 100px 10px;
+        background-color: lightblue;
+      }
     </style>
-</head>
-<body>
-
-    <!-- 1. Using element.style.property -->
-     <div id="elementOne">
-         <button id="myBtn">Click me</button>
-         <p id="output"></p>
-     </div>
-
-     <!-- 2. Using element.classList -->
-     <div id="elementTwo" class="active">
-        This is a div <br><br>
-        <button id="myBtn2">Toggle Class</button>
-    </div>
-        
-    <!-- 3. Using element.setAttribute -->
-     <div>
-         <p id="testParagraph" style="color: red">A red paragraph</p>
-     </div>
-
-     <!-- 4. Using element.style.cssText -->
-     <div>
-        <p id="testParagraph2">A paragraph to test</p>
-        <button id="myBtn3">Change color</button>
-     </div>
-
-     <!-- 5. Using element.style.setProperty -->
-     <div>
-        <p id="testParagraph3" style="color: green">A paragraph to test</p>
-     </div>
-    <script>
-        // 1. Using element.style.property
-        const button = document.getElementById('myBtn');
-        const output = document.getElementById('output');
-
-        button.style.backgroundColor = 'blue';
-        button.style.color = "white"
-        button.style.fontSize = '20px'
-
-        button.addEventListener('click', () => {
-            if (output.textContent === '') {
-                output.textContent = 'test test test test test';
-            } else {
-                output.textContent = '';
-            }
-        });
-
-        // 2. Using element.classList
-        // to change its div's color every click
-        const div = document.getElementById('elementTwo');
-        const button2 = document.getElementById('myBtn2');
-
-        function toggleClassAndColor() {
-            div.classList.toggle('active');
-            div.classList.toggle('inactive');
-
-            // check if the 'active' class is present and change the background color;
-            if (div.classList.contains("active")) {
-                div.style.backgroundColor = "green";
-                button2.style.color = "black";
-            } else {
-                div.style.backgroundColor = "yellow";
-                button2.style.color = "brown";
-            }
-        }
-        button2.addEventListener('click', toggleClassAndColor);
-
-        // 3. Using element.setAttribute.
-        const paragraph = document.getElementById('testParagraph');
-        paragraph.setAttribute('style', 'color: blue') // changes the color from red to blue
-
-        // 4. Using element.style.cssText
-        const text = document.getElementById('testParagraph2');
-        const button3 = document.getElementById('myBtn3');
-
-        text.style.cssText = "color: purple; font-weight: bold;";
-
-        function toggleParagraphColor() {
-            if (text.style.color === 'purple') {
-                text.style.color = 'violet';
-            } else {
-                text.style.color = 'purple';
-            }
-        }
-        button3.addEventListener('click', toggleParagraphColor)
-
-        // 5. Using element.style.setProperty
-        const paragraph2 = document.getElementById('testParagraph3');
-        paragraph2.style.setProperty("color", "blue", "important") // changes color from green to blue
-
-        
-    </script>
     
-</body>
+  </head>
+  <body>
+    <!-- 1. Using element.style.property -->
+    <div id="elementOne">
+      <button id="myBtn">Click me</button>
+      <p id="output"></p>
+    </div>
+
+    <!-- 2. Using element.classList -->
+    <div id="elementTwo" class="active">
+      This is a div <br /><br />
+      <button id="myBtn2">Toggle Class</button>
+    </div>
+
+    <!-- 3. Using element.setAttribute -->
+    <div>
+      <p id="testParagraph" style="color: red">A red paragraph</p>
+    </div>
+
+    <!-- 4. Using element.style.cssText -->
+    <div>
+      <p id="testParagraph2">A paragraph to test</p>
+      <button id="myBtn3">Change color</button>
+    </div>
+
+    <!-- 5. Using element.style.setProperty -->
+    <div>
+      <p id="testParagraph3" style="color: green">A paragraph to test</p>
+    </div>
+
+    <script>
+      // 1. Using element.style.property
+      const button = document.getElementById("myBtn");
+      const output = document.getElementById("output");
+
+      button.style.backgroundColor = "blue";
+      button.style.color = "white";
+      button.style.fontSize = "20px";
+
+      button.addEventListener("click", () => {
+        if (output.textContent === "") {
+          output.textContent = "test test test test test";
+        } else {
+          output.textContent = "";
+        }
+      });
+
+      // 2. Using element.classList
+      // to change its div's color every click
+      const div = document.getElementById("elementTwo");
+      const button2 = document.getElementById("myBtn2");
+
+      function toggleClassAndColor() {
+        div.classList.toggle("active");
+        div.classList.toggle("inactive");
+
+        // check if the 'active' class is present and change the background color;
+        if (div.classList.contains("active")) {
+          div.style.backgroundColor = "green";
+          button2.style.color = "black";
+        } else {
+          div.style.backgroundColor = "yellow";
+          button2.style.color = "brown";
+        }
+      }
+      button2.addEventListener("click", toggleClassAndColor);
+
+      // 3. Using element.setAttribute.
+      const paragraph = document.getElementById("testParagraph");
+      paragraph.setAttribute("style", "color: blue"); // changes the color from red to blue
+
+      // 4. Using element.style.cssText
+      const text = document.getElementById("testParagraph2");
+      const button3 = document.getElementById("myBtn3");
+
+      text.style.cssText = "color: purple; font-weight: bold;";
+
+      function toggleParagraphColor() {
+        if (text.style.color === "purple") {
+          text.style.color = "violet";
+        } else {
+          text.style.color = "purple";
+        }
+      }
+      button3.addEventListener("click", toggleParagraphColor);
+
+      // 5. Using element.style.setProperty
+      const paragraph2 = document.getElementById("testParagraph3");
+      paragraph2.style.setProperty("color", "blue", "important"); // changes color from green to blue
+    </script>
+  </body>
 </html>
