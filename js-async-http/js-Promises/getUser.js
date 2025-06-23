@@ -22,6 +22,7 @@ getUserInfo(1, (userInfo) => {
     console.log('User Info:', userInfo);
 
     // Functionalities here
+    // will finish this one later
     const userInfoDiv = document.getElementById('userInfo');
 
     getUserPosts(1, (userPosts) => {
